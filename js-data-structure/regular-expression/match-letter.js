@@ -119,10 +119,34 @@ console.log(result12)
 3) Username letters can be lowercase and uppercase.
 
 4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+Test Case
+Your regex should match JACK
+Passed
+Your regex should not match J
+Passed
+Your regex should match Jo
+Passed
+Your regex should match Oceans11
+Passed
+Your regex should match RegexGuru
+Passed
+Your regex should not match 007
+Passed
+Your regex should not match 9
+Passed
+Your regex should not match A1
+Passed
+Your regex should not match BadUs3rnam3
+Passed
+Your regex should match Z97
+Passed
+Your regex should not match c57bT3
 */
 let username = "JackOfAllTrades";
-let userCheck = /^\D\D.*/i; // Change this line
+let userCheck = /^[a-z](\d\d+|[a-z]+\d*)$/i; // Change this line
 let result13 = userCheck.test(username);
+
 
 console.log(result13)
 
