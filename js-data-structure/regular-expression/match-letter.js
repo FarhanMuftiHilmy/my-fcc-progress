@@ -152,6 +152,95 @@ console.log(result13)
 
 
 
+// Match Whitespace using \s//
+
+//This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class [ \r\t\f\n\v]
+
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result14 = sample.match(countWhiteSpace);
+
+console.log(result14)
+
+// Match Non-Whitespace Characters using \S //
+
+// it is similar to [^ \r\t\f\n\v]
+
+let sample2 = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result15 = sample2.match(countNonWhiteSpace);
+
+console.log(result15)
+
+
+// Specify Upper and Lower Number of Matches using {a,b} //
+
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result16 = ohRegex.test(ohStr);
+
+console.log(result16)
+
+// Specify Only the Lower Number of Matches using {a,}//
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result17 = haRegex.test(haStr);
+
+console.log(result17)
+
+// Specify Exact Number of Matches using {a}//
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result18 = timRegex.test(timStr);
+
+console.log(result18)
+
+// Check for All or None using a?//
+let favWord = "favorite";
+let favRegex = /favou?rite/; // Change this line
+let result19 = favRegex.test(favWord);
+
+console.log(result19)
+
+// Positive and Negative Lookahead //
+
+
+// Use lookaheads in the pwRegex to match passwords that are greater than 5 characters long,
+// do not begin with numbers, and have two consecutive digits.
+
+// test case
+// Your regex should use two positive lookaheads.
+// Passed
+// Your regex should not match "astronaut"
+// Passed
+// Your regex should not match "banan1"
+// Passed
+// Your regex should match "bana12"
+// Passed
+// Your regex should match "abc123"
+// Passed
+// Your regex should not match "1234"
+// Passed
+// Your regex should not match "8pass99"
+// Passed
+// Your regex should not match "12abcde"
+// Passed
+// Your regex should match "astr1on11aut"
+
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{5,})(?=^\D)(?=\w{3,}\d\d)/; // Change this line
+let result20 = pwRegex.test(sampleWord);
+
+console.log(result20)
+
+
+
+
+
+
+
+
 
 
 
