@@ -235,6 +235,45 @@ let result20 = pwRegex.test(sampleWord);
 console.log(result20)
 
 
+// Check For Mixed Grouping of Characters using () //
+
+let myString = "Eleanor Roosevelt";
+let myRegex5 = /(Franklin D.|Eleanor) Roosevelt/; // Change this line
+let result21 = myRegex5.test(myString); // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
+
+console.log(result21)
+
+// Reuse Patterns Using Capture Groups using () and \number to specify//
+
+//Using the .match() method on a string will return an array with the string it matches, along with its capture group.
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
+let result22 = reRegex.test(repeatNum);
+
+console.log(result22)
+
+
+// Use Capture Groups to Search and Replace //
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = '$3 $2 $1'; // Change this line
+let result23 = str.replace(fixRegex, replaceText);
+
+console.log(result23)
+
+// Remove Whitespace from Start and End //
+
+
+let hello = "   Hello, World!  ";
+let wsRegex = /\S{1,6}\s\S{1,6}/gi; // Change this line
+
+let result24 = hello.match(wsRegex); // Change this line
+
+console.log(result24)
+
 
 
 
