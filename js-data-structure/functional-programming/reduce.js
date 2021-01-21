@@ -114,16 +114,16 @@ var watchList = [
 
 function getRating(watchList){
   // Only change code below this line
+  let value = 0 
+  let reducer = (accumulator, currentValue) => (accumulator + currentValue)
   var averageRating = watchList
-  .map(item => {
-    return {
-      rating: item["imdbRating"]
-      }
-  })
-  .filter(item => {
-    return parseFloat(item.rating)
-  })
-  .reduce((sum, item) => (sum + item.rating, 0)/5)
+  .filter(item => item["Director"] == "Christopher Nolan")
+  .map(function(item){
+      value+=1
+      return parseFloat(item["imdbRating"])
+    })
+  // .map(item => parseFloat(item["imdbRating"]))
+  .reduce(reducer)/value
 
   // Only change code above this line
   return averageRating;
